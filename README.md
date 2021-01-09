@@ -21,4 +21,3 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* I really need to figure out this git shit
