@@ -21,3 +21,10 @@ Things you may want to cover:
 
 * Deployment instructions
 
+ 
+ THIS IS EXACTLY THE SAME AS THE DEMO CODE BUT CAUSES A 'SYNTAX ERROR WHILE RENDERING TEMPLATE' ON NAVBAR CLASS
+ <%= link_to "Alpha Blog", root_path, class: "navbar-brand" id: "logo" %>
+ (this syntax works elsewhere though)
+
+ THIS WORKS: (I just replaced the href with the ruby code)
+ <a class="navbar-brand" href="#"><%= link_to "Alpha Blog", root_path, id: "logo" %></a>
