@@ -2,6 +2,10 @@
 
 <%= gravatar_for @user, size: 200 %>
 
-<h3 class="text-center mt-4">stickys</h3>
+<div class="text-center mt-4">
+  <%= link_to "edit your profile", edit_user_path(@user), class: "btn btn-outline-info" %>
+</div>
+
+<h3 class="text-center mt-4">midnight sneaks</h3>
 
 <%= render 'articles/article' %>
