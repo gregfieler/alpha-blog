@@ -13,7 +13,8 @@
         <div class="form-group row">
           <%= f.label :email, class: "col-2 col-form-label mt-3 text-light" %>
           <div class="col-10"> 
-            <%= f.email_field :email, class: "form-control shadow rounded mt-3", placeholder: "Enter email address" %>
+            <%= f.email_field :email, class: "form-control shadow rounded mt-3", 
+                  placeholder: "Enter email address - using a prebuilt REGEX for validation, not gonna spam you" %>
           </div>
         </div>
 
@@ -25,7 +26,7 @@
         </div>
 
         <div class="form-group row justify-content-center">
-          <%= f.submit(@user.new_record? ? "Sign Up" : "Update account", class: "btn btn-outline-light btn-lg mt-4") %>
+          <%= f.submit(@user.new_record? ? "put on your jammies and join!" : "Update account", class: "btn btn-outline-light btn-lg mt-4") %>
         </div>
       <% end %>
     </div>

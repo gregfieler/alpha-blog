@@ -1,20 +1,20 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#"><%= link_to "Alpha Blog", root_path, id: "logo" %></a>
+    <a class="navbar-brand" href="#"><%= link_to "Refridgerator magnets", root_path, id: "logo" %></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <%= link_to "Midnight Snackers", users_path, class: "nav-link"%>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            Magnets
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <%= link_to "Create new article", new_article_path, class: "dropdown-item" %>
-            <%= link_to "View articles", articles_path, class: "dropdown-item" %>
+            <%= link_to "add a magnet", new_article_path, class: "dropdown-item" %>
+            <%= link_to "see magnets", articles_path, class: "dropdown-item" %>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
