@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update]
 
   def show
-    @user = User.find(params[:id])
-    @articles = @user.articles.paginate(page: params[:page], per_page: 5)
+    @articles = @user.articles.paginate(page: params[:page], per_page: 5).order('created_at DESC')
   end
     
   def index
-    @users = User.paginate(page: params[:page], per_page: 5)
+    @users = User.paginate(page: params[:page], per_page: 5).order('created_at ASC')
   end
 
   def new
@@ -14,13 +14,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
-      flash[:notice] = "Your account was successfully updated"
+      flash[:notice] = "okay, we're good"
       redirect_to @user
     else
       render 'edit'  
@@ -30,7 +28,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:notice] = "Welcome to the Fridge, you have successfully signed up"
+      session[:user_id] = @user.id
+      flash[:notice] = "Welcome to the Fridge"
       redirect_to articles_path      
     else
       render 'new'
@@ -40,6 +39,10 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:username, :email, :password)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 
 end
