@@ -8,6 +8,7 @@
         <li class="nav-item">
           <%= link_to "midnight snackers", users_path, class: "nav-link"%>
         </li>
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             virtinote
@@ -23,28 +24,30 @@
         </li>
 
         <% if logged_in? %>              
+      
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                hey <%= current_user.username %>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              hey <%= current_user.username %> <%= " -admin" if current_user.admin? %>
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to "view profile", user_path(current_user), class: "dropdown-item" %><
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to "view profile", user_path(current_user), class: "dropdown-item" %>
               <%= link_to "edit profile", edit_user_path(current_user), class: "dropdown-item" %>
-            </div>
-          </li>
-            
+              <li><hr class="dropdown-divider"></li>
+              <%= link_to "delete profile and virtinotes", user_path(current_user), class: "dropdown-item text-danger", method: :delete, data: {confirm: "you sure?"} %>
+            </ul>
+          </li>      
           <li class="nav-item">
             <%= link_to 'go to bed', logout_path, class: "nav-link", method: :delete %>
           </li>
 
-          <% else %>
-            <li class="nav-item">
-              <%= link_to 'come on in', login_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'sign me up', signup_path, class: "nav-link" %>
-            </li>
-          <% end %>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to 'come on in', login_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'sign me up', signup_path, class: "nav-link" %>
+          </li>
+        <% end %>
 
       </ul>
       <form class="d-flex">
