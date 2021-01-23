@@ -22,6 +22,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bcrypt', '~> 3.1.7'
 # Use 'will paginate'
 gem 'will_paginate', '~> 3.3.0'
+# fix issue with Rails 6 Ruby 3 
+gem 'rexml', require: false
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
