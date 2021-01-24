@@ -1,5 +1,7 @@
 class AddNameToCategory < ActiveRecord::Migration[6.1]
   def change
-    add_column :categories, :name, :string
+    create_table :categories do |t|
+      t.string :name
+      t.timestamps
   end
 end
