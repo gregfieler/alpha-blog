@@ -10,6 +10,9 @@ I'm using it for a different purposes so here's list of things I may want do add
 ## Bugs
 
 ## Todo's priorities:
+- modify the signup process to restrict who can log in.
+maybe as simple as a 'keyword' required to signup (could get fancier and make it a hash of some message I send)
 - review existing functionality
+- update categories - either CLI (in Heroku) or add functionality
 
 
