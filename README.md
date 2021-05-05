@@ -6,6 +6,7 @@ I'm using it for a different purposes so here's list of things I may want do add
 
 ## New features:
 - sorting and filtering messages.  Filter by category should be easy.
+- this doesn't work on mobile...too much time investment; think I'd rather spend my time on Data, ML an Python.
 
 ## Bugs
 
